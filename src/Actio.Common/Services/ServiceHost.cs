@@ -17,9 +17,12 @@ namespace Actio.Common.Services
     /// </summary>
     public class ServiceHost : IServiceHost
     {
+        #region Private properties
         // create a private readonly variable, and this will be of type IWebHost
         private readonly IWebHost _webHost;
+        #endregion
 
+        #region Constructor
         /// <summary>
         /// Class constructor
         /// </summary>
@@ -28,11 +31,16 @@ namespace Actio.Common.Services
         {
             _webHost = webHost;
         }
+        #endregion
 
+        #region Public methods
         /// <summary>
         /// Method will run the _webHost.Run()
         /// </summary>
         public void Run() => _webHost.Run();
+        #endregion
+
+        #region Public static method
 
         /// <summary>
         /// Create Service
@@ -42,7 +50,7 @@ namespace Actio.Common.Services
         /// <returns></returns>
         public static HostBuilder Create<TStartup>(string[] args) where TStartup : class
         {
-            Console.Title = typeof(TStartup).Namespace;
+            Console.Title = typeof(TStartup).Namespace ?? throw new InvalidOperationException();
             var config = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .AddCommandLine(args)
@@ -54,7 +62,8 @@ namespace Actio.Common.Services
 
             return new HostBuilder(webHostBuilder.Build());
         }
-
+        #endregion
+        
         #region Builder base class 
         public abstract class BuilderBase
         {

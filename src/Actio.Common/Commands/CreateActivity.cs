@@ -8,6 +8,7 @@ namespace Actio.Common.Commands
     /// </summary>
     public class CreateActivity : IAuthenticatedCommand
     {
+        #region Public properties
         /// <summary>
         /// Get/Set activity ID
         /// </summary>
@@ -32,5 +33,6 @@ namespace Actio.Common.Commands
         /// Get/Set Activity created date information
         /// </summary>
         public DateTime CreatedAt {get;set;}
+        #endregion
     }
 }

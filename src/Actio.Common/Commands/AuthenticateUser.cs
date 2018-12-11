@@ -6,6 +6,7 @@ namespace Actio.Common.Commands
     /// </summary>
     public class AuthenticateUser : ICommand
     {
+        #region Public properties
         /// <summary>
         /// Get/Set user email
         /// </summary>
@@ -14,5 +15,6 @@ namespace Actio.Common.Commands
         /// Get/Set user password
         /// </summary>
         public string Password {get;set;}
+        #endregion
     }
 }

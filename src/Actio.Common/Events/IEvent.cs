@@ -1,6 +1,8 @@
 namespace Actio.Common.Events
 {
-    // Marker Interface (event hanlder pattern)
+    /// <summary>
+    /// Mark Event Interface, Handler Pattern
+    /// </summary>
     public interface IEvent
     {         
     }

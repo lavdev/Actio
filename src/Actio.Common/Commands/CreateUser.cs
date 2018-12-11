@@ -6,6 +6,7 @@ namespace Actio.Common.Commands
     /// </summary>
     public class CreateUser : ICommand
     {
+        #region Public properties
         /// <summary>
         /// Get/Set User email
         /// </summary>
@@ -18,5 +19,6 @@ namespace Actio.Common.Commands
         /// Get/Set User name
         /// </summary>
         public string Name {get;set;}
+        #endregion
     }
 }
